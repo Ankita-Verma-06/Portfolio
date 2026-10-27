@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <title>Hello,World!</title>
+        <link rel="stylesheet" href="style.css"/>
+        <style>
+
+             * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+
+            body{
+                margin: 0;
+                padding: 0;
+                font-family: Arial;
+            
+            }
+
+            .navbar{
+                display:flex;
+                justify-content:space-between;
+                align-items: center;
+                padding:24px 10%;
+                background-color:white;
+                width:100%;
+                max-width:1000px;
+                margin:0 auto;
+            }
+
+            .myself{
+                font-size: 22px;
+                font-weight: 800;
+                color: black;
+            }
+
+            .links{
+                display: flex;
+                align-items: center;
+                gap: 32px; 
+            }
+
+            .links a{
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 600;
+            color:grey;
+            transition: color 0.2s ease;
+            }
+
+            .hire-btn {
+            background-color: navy;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 15px;
+            font-weight: 600;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            }
+
+            .intro{
+            margin: 0;
+            padding: 10px;
+            background-image:linear-gradient(#d0e1f0,white);
+            }
+
+            .hero {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                max-width: 1000px;
+                margin: 0 auto;
+                gap: 50px;
+            }
+
+            .card {
+                flex: 2;
+            }
+
+            .card p {
+                margin: 0;
+                color: navy;
+            }
+
+            .name {
+                font-size: 42px;
+                margin: 10px 0 5px 0;
+                color: black;
+            }
+
+            .role {
+                font-size: 36px;
+                margin: 0 ;
+                color:navy; 
+            }
+
+            p.line {
+                font-size: 16px;
+                color: grey;
+                margin:0px 0px 25px;
+                line-height: 2;
+
+            }
+
+            .me {
+                display: flex;
+                gap: 15px;
+                margin-bottom: 40px;
+            }
+
+            .me button {
+                padding: 12px 24px;
+                font-weight: bold;
+                border-radius: 6px;
+                cursor: pointer;
+                border: none;
+            }
+
+            .me button:first-child {
+                background-color: navy;
+                color: white;
+            }
+
+            .me button:last-child {
+                background-color: white;
+                color: black;
+                border: 55px grey;
+            }
+
+       
+            .stats-container {
+                display: flex;
+                gap: 40px;
+            }
+
+            .stat-number {
+                font-size: 26px;
+                font-weight: bold;
+                color: black;
+                margin-bottom: 5px;
+            }
+
+            .stat-label {
+                font-size: 13px;
+                color: grey;
+            }
+
+            .logo {
+                flex: 1;
+                display: flex;
+                justify-content: center;
+            }
+
+            .photo{
+                width: 220px;
+                height: 220px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 54px;
+                font-weight: bold;
+                color: navy;
+                background-color: white; 
+                border: 10px solid transparent;
+                background-image: linear-gradient(white, white), linear-gradient(45deg, navy, skyblue);
+                background-origin: border-box;
+                border-radius:50%;
+                background-clip: padding-box, border-box;
+            }
+
+            .about-section{
+                display: flex;
+                justify-content: space-between;
+                max-width: 1000px;
+                margin: auto; 
+                padding: 80px 0;
+                gap: 60px;
+                
+            }
+            .about-content{
+               flex:1.5;
+            
+            }
+            .about-me{
+                font-size:12px;
+                font-weight:800;
+                letter-spacing:1.5px;
+                color:navy;
+                margin: 0 0 12px 0;
+            }
+
+            .tag{
+                font-size:32px;
+                font-weight:bold;
+                color:black;
+                margin:0 0 24px 0;
+                line-height:1.3;
+            }
+
+            .summary{
+                font-size:12px;
+                color:rgb(67, 66, 66);
+                line-height: 1.6;
+            }
+            .detail-container{
+                flex:1;
+                display:grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap:16px;
+            
+            }
+
+            .detail-item{
+                background-color: #f8fafc;
+                border: 1px solid grey;
+                border-radius: 12px;
+                padding: 16px 20px;
+                display: flex;
+                flex-direction: column;
+                gap: 6px;
+            }
+
+            .detail-name{
+                font-size: 14px;
+                font-weight: bold;
+                color: #0f172a;
+            }
+
+            .detail-label{
+                font-size: 13px;
+                color: grey;
+            }
+
+
+            .skills-wrapper{
+                margin: 0px;
+                padding: 10px;
+                background-color:rgb(241, 241, 249);
+            }
+
+            .skills-section{
+                justify-content: space-between;
+                max-width: 1000px;
+                margin: auto; 
+                padding: 80px 0;
+            }
+
+            .skills-tagline{
+                color:navy;
+                font-size:12px;
+                font-weight:800px;
+                letter-spacing: 1.5;
+                margin:0 0 12px 0;
+            }
+            .skills-title {
+                font-size: 34px;
+                font-weight: bold;
+                color: black;
+                margin: 0 0 32px 0;
+            }
+
+            .skills-container {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 20px;
+            }
+
+            .skills-item {
+                background-color: #ffffff; 
+                border: 1px solid #e2e8f0;
+                border-radius: 12px;
+                padding: 24px;
+            }
+
+
+            .checkmark {
+                background-color: rgb(230, 230, 246);
+                color: navy;
+                border: 1px solid grey;
+                border-radius: 2px;
+                margin-right:8px;
+            }
+
+             .skills-name {
+                font-size: 16px;
+                font-weight: bold;
+                color: black;
+                margin-bottom: 10px;
+                
+            }
+
+            .skills-label {
+                font-size: 13px;
+                color: grey;
+                line-height:0.5;
+            }
+
+
+            .work-wrapper{
+                margin: 0px;
+                padding: 10px;
+                background-color:white;
+            }
+
+            .work-section{
+                justify-content: space-between;
+                max-width: 1000px;
+                margin: auto; 
+                padding: 80px 0;
+            }
+
+            .work-tagline{
+                color:navy;
+                font-weight: bold;
+                font-size: 16px;
+                display: inline-block;
+            }
+
+            .work-title{
+                font-size: 34px;
+                font-weight: bold;
+                color: black;
+                margin: 0 0 32px 0;
+            }
+
+            .projects-container{
+                display: grid;
+                grid-template-columns: repeat(3,1fr);
+                gap: 20px
+            }
+
+            .projects-item{
+                background-color: white;
+                border: 1px solid grey;
+                border-radius: 16px;
+                overflow: hidden;
+                
+                
+            }
+
+            .project-title{
+                height: 160px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-image:linear-gradient(to right, orange,rgb(244, 94, 60));
+                color: white;
+                font-size: 20px;
+                font-weight: bold;
+                
+            }
+
+
+            .projects-item:nth-child(1) .project-title {
+                background: linear-gradient(135deg, #f97316, #ef4444); 
+            }
+
+            .projects-item:nth-child(2) .project-title {
+                background: linear-gradient(135deg, #1d4e9d, #1ac5e3); 
+            }
+
+            .projects-item:nth-child(3) .project-title {
+                background: linear-gradient(135deg, #1dad7d, #2a74ea); 
+            }
+
+            .project-label {
+                padding: 24px;
+                
+                flex-grow: 1;
+            }
+
+            .project-name {
+                font-size: 18px;
+                font-weight: bold;
+                color: black;
+                margin: 0 0 10px 0;
+            }
+
+            .project-tagline {
+                font-size: 13px;
+                color: grey;
+                line-height: 1.6;
+                text-transform: none; 
+                letter-spacing: normal;
+                margin: 0 0 20px 0;
+                flex-grow: 1;
+            }
+
+
+            .tech-stack {
+                display: flex;
+                gap: 8px;
+                margin-bottom: 24px;
+            }
+
+            .stack {
+                background-color: rgb(221, 217, 217);
+                color: navy;
+                font-size: 11px;
+                font-weight: 600;
+                padding: 4px 10px;
+                border-radius: 20px;
+                margin: 0;
+            }
+
+            .demo {
+                font-size: 14px;
+                font-weight: 600;
+                color: navy; 
+                margin: 0;
+            }
+
+            .education-wrapper {
+                width: 100%;
+                background-color: #f8fafc; 
+                padding: 80px 0;
+            }
+
+            .education-section {
+                max-width: 1000px;
+                margin: 0 auto;
+                font-family: Arial, sans-serif;
+            }
+
+            .education-tagline {
+                font-size: 12px;
+                font-weight: 800;
+                text-transform: uppercase;
+                letter-spacing: 1.5px;
+                color: navy;
+                margin: 0 0 12px 0;
+            }
+
+            .education-title {
+                font-size: 34px;
+                font-weight: bold;
+                color: #0f172a;
+                margin: 0 0 8px 0;
+            }
+
+            .education-subtitle {
+                font-size: 14px;
+                color: grey;
+                margin: 0 0 40px 0;
+            }
+
+            .education-table {
+                width: 100%;
+                border-spacing: 0; 
+                background-color: #ffffff;
+                border-radius: 12px;
+                
+                
+            }
+
+            .education-table th {
+                background-color: #0f172a; 
+                color: #ffffff;
+                text-align: left;
+                padding: 18px 24px;
+                font-size: 14px;
+                font-weight: bold;
+            }
+
+            .education-table td {
+                padding: 20px 24px;
+                font-size: 14px;
+                color: #334155;
+                border-bottom: 1px solid #e2e8f0; 
+            }
+
+            .education-table tr:last-child td {
+                border-bottom: none;
+            }
+
+ 
+            .contact-wrapper {
+                width: 100%;
+                background-color: #ffffff;
+                padding: 80px 0;
+            }
+
+            .contact-section {
+                max-width: 1000px;
+                margin: 0 auto;
+                display: flex;
+                justify-content: space-between;
+                gap: 60px;
+                font-family: Arial, sans-serif;
+            }
+
+            .contact-info {
+                flex: 1;
+            }
+
+            .contact-tagline {
+                font-size: 12px;
+                font-weight: 800;
+                text-transform: uppercase;
+                letter-spacing: 1.5px;
+                color: navy;
+                margin: 0 0 12px 0;
+            }
+
+            .contact-title {
+                font-size: 34px;
+                font-weight: bold;
+                color: #0f172a;
+                margin: 0 0 24px 0;
+            }
+
+            .contact-desc {
+                font-size: 15px;
+                color: #475569;
+                line-height: 1.6;
+                margin: 0 0 40px 0;
+            }
+
+            .contact-details-list {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .detail-block h4 {
+                font-size: 14px;
+                font-weight: bold;
+                color: #0f172a;
+                margin: 0 0 4px 0;
+            }
+
+            .detail-block p {
+                font-size: 14px;
+                color: #475569;
+                margin: 0;
+            }
+
+            .detail-block a {
+                color: #475569;
+                text-decoration: none;
+            }
+
+            .contact-form {
+                flex: 1.2;
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+                width: 100%;
+            }
+
+            .form-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 16px;
+            }
+
+            .contact-form input,
+            .contact-form select,
+            .contact-form textarea {
+                background-color: #f8fafc;
+                border: 1px solid #e2e8f0;
+                border-radius: 8px;
+                padding: 16px;
+                font-size: 14px;
+                color: #0f172a;
+                width: 100%;
+                outline: none;
+                font-family: inherit;
+                transition: all 0.2s ease;
+            }
+
+            .contact-form input::placeholder,
+            .contact-form textarea::placeholder {
+                color: #94a3b8;
+            }
+
+            .contact-form input:focus,
+            .contact-form select:focus,
+            .contact-form textarea:focus {
+                border-color: #4f46e5;
+                background-color: #ffffff;
+            }
+
+
+            .contact-form textarea {
+                resize: vertical;
+            }
+
+
+            .submit-btn {
+                background-color: #4f46e5;
+                color: #ffffff;
+                font-size: 15px;
+                font-weight: bold;
+                padding: 16px;
+                border: none;
+                border-radius: 8px;
+                cursor: pointer;
+                transition: background-color 0.2s ease;
+                margin-top: 8px;
+            }
+
+            .submit-btn:hover {
+                background-color: #4338ca;
+            }
+
+            .footer-wrapper {
+                width: 100%;
+                background-color: #0f172a; 
+                padding: 30px 0;           
+            }
+
+            .footer-section {
+                max-width: 1000px;
+                margin: 0 auto;
+                display: flex;
+                justify-content: space-between; 
+                align-items: center;
+                font-family: Arial, sans-serif;
+            }
+
+            .copyright-text {
+                font-size: 13px;
+                color: #94a3b8; 
+                margin: 0;
+            }
+
+            .footer-links {
+                display: flex;
+                gap: 24px; 
+            }
+
+            .footer-links a {
+                font-size: 13px;
+                color: #ffffff; 
+                text-decoration: none;
+                font-weight: 500;
+                transition: color 0.2s ease;
+            }
+
+           
+
+
+
+
+        </style>
+    </head>
+    <body>
+        <div class="avbar-wrapper">
+            <nav class="navbar">
+                <a class="myself">Ankita.dev</a>
+                <div class="links">
+                    <a href="#about">About</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#education">Education</a>
+                    <button class="hire-btn">Hire Me</button>
+                </div>
+            </nav>
+        </div>
+        <div class="intro">
+            <div class="hero">
+                <div class="card">
+                    <p>Hello I'm</p>
+                    <h1 class="name">Ankita Verma</h1>
+                    <h1 class="role">Frontend Developer</h1>
+                    <p class="line">I desgin and build clean, fast and user friendly websites using HTML, CSS, Javascript</p>
+                    <div class="me">
+                        <button>View My Work</button>
+                        <button>Contact Me</button>
+                    </div>
+                    <div class="stats-container">
+                        <div class="stat-item">
+                            <div class="stat-number">10+</div>
+                            <div class="stat-label">Projects built</div>
+                        </div>
+  
+                        <div class="stat-item">
+                            <div class="stat-number">6</div>
+                            <div class="stat-label">Technologies</div>
+                        </div>
+  
+                        <div class="stat-item">
+                            <div class="stat-number">2028</div>
+                            <div class="stat-label">B.Tech CSE</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="logo">
+                    <span class="photo">AV</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="about-section" id="about">
+            <div class="about-content">
+                <p class="about-me">ABOUT ME</p>
+                <h2 class="tag">Turning ideas into websites</h2>
+                <p class="summary">I am a B.Tech Computer Science student at CGC University with a strong interest in frontend develoopment. I enjoy building pages that look good and are easy to use.</p>
+                <p class="summary">Right now I am learning javascript, and my goal is to become a full-stack developer</p>
+            </div>
+            <div class="detail-container">
+                <div class="detail-item">
+                    <div class="detail-name">Name</div>
+                    <div class="detail-label">Ankita Verma</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-name">location</div>
+                    <div class="detail-label">Mohali, Punjab</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-name">Email</div>
+                    <div class="detail-label">aiankita06@gamil.com</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-name">Languages</div>
+                    <div class="detail-label">English, Hindi</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="skills-wrapper" id="skills">
+            <div class="skills-section">
+                <p class="skills-tagline">WHAT I KNOW</p>
+                <h2 class="skills-title">Skills</h2>
+
+                <div class="skills-container">
+                    <div class="skills-item">
+                        <h4 class="skills-name"><span class="checkmark">✓</span>HTML5</h4>
+                        <p class="skills-label">Semantic, accesible page structure</p>
+                    </div>
+
+                    <div class="skills-item">
+                        <h4 class="skills-name"><span class="checkmark">✓</span>CSS3</h4>
+                        <p class="skills-label">Modern styling, variables and effects</p>
+                    </div>
+
+                    <div class="skills-item">
+                        <h4 class="skills-name"><span class="checkmark">✓</span>Flexbox</h4>
+                        <p class="skills-label">Navbars, rows and perfect centring</p>
+                    </div>
+
+                    <div class="skills-item">
+                        <h4 class="skills-name"><span class="checkmark">✓</span>CSS Grid</h4>
+                        <p class="skills-label">Two dimensionals page layout</p>
+                    </div>
+
+
+                    <div class="skills-item">
+                        <h4 class="skills-name"><span class="checkmark">✓</span>JavaScript</h4>
+                        <p class="skills-label">Variables, types and logic</p>
+                    </div>
+
+                    <div class="skills-item">
+                        <h4 class="skills-name"><span class="checkmark">✓</span>Git & GitHub</h4>
+                        <p class="skills-label">Version control and sharing code</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="work-wrapper" id="projects">
+            <div class="work-section">
+                <p class="work-tagline">MY WORK</p>
+                <h2 class="work-title">Featured Projects</h2>
+
+                <div class="projects-container">
+                    <div class="projects-item">
+                        <div class="project-title">Timetable generator</div>
+                        <div class="project-label">
+                            <p class="project-name">Timetable generator</p>
+                            <p class="project-tagline">A Django-based system that uses Genetic Algorithms to generate conflict-free academic timetables.</p>
+                            <div class="tech-stack">
+                                <p class="stack">Python</p>
+                                <p class="stack">HTML</p>
+                            </div>
+                            <a href="https://github.com/Ankita-Verma-06/timetable-generator.git" class="demo">Live Demo-> Code</a>
+                        </div>
+                    </div>
+
+
+                    <div class="projects-item">
+                        <div class="project-title">Blood Bank System</div>
+                        <div class="project-label">
+                            <p class="project-name">Blood Bank System</p>
+                            <p class="project-tagline">A web-based system for managing blood donors, recipients, inventory, and blood requests efficiently.</p>
+                            <div class="tech-stack">
+                                <p class="stack">Javas</p>
+                                <p class="stack">Javascript</p>
+                            </div>
+                            <a href="https://github.com/Ankita-Verma-06/Blood-Bank-Management-System.git" class="demo">Live Demo-> Code</a>
+                        </div>
+                    </div>
+
+                    <div class="projects-item">
+                        <div class="project-title">Mood Tracker</div>
+                        <div class="project-label">
+                            <p class="project-name">Mood Tracker</p>
+                            <p class="project-tagline">A simple web app that tracks your mood and suggests suitable activities based on how you feel.</p>
+                            <div class="tech-stack">
+                                <p class="stack">HTML</p>
+                                <p class="stack">CSS</p>
+                            </div>
+                            <a href="https://github.com/Ankita-Verma-06/Mood-Tracker.git" class="demo">Live Demo-> Code</a>
+                        </div>
+                    </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="education-wrapper" id="education">
+            <div class="education-section">
+        
+                <div class="education-content">
+                    <p class="education-tagline">BACKGROUND</p>
+                    <h2 class="education-title">Education</h2>
+                    <p class="education-subtitle">My academic journey</p>
+                </div>
+
+                <table class="education-table">
+                    <thead>
+                        <tr>
+                            <th>Course</th>
+                            <th>College / School</th>
+                            <th>Year</th>
+                            <th>Score</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td><strong>B.Tech CSE</strong></td>
+                            <td>CGC Jhanjeri</td>
+                            <td>2024 - 2028</td>
+                            <td>8.6 CGPA</td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>Class 12</strong></td>
+                            <td>Diamond Internation School</td>
+                            <td>2023</td>
+                            <td>83%</td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>Class 10</strong></td>
+                            <td>Adarsh Vidya Mandir High School</td>
+                            <td>2021</td>
+                            <td>100%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="contact-wrapper" id="contact">
+            <div class="contact-section">
+                <div class="contact-info">
+                    <p class="contact-tagline">CONTACT</p>
+                    <h2 class="contact-title">Let's work together</h2>
+                    <p class="contact-desc">
+                        Have a project or an opportunity? Send me a message and I will reply within a day.
+                    </p>
+                
+                    <div class="contact-details-list">
+                        <div class="detail-block">
+                            <h4>Email</h4>
+                            <p><a href="mailto:aiankita06@gmail.com">aiankita06@gmail.com</a></p>
+                        </div>
+
+                        <div class="detail-block">
+                            <h4>Phone</h4>
+                            <p>+91 8816837262</p>
+                        </div>
+
+                        <div class="detail-block">
+                            <h4>Location</h4>
+                            <p>Mohali, Punjab</p>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="contact-form" action="#" method="POST">
+                    <div class="form-grid">
+                        <input type="text" placeholder="Your name" required>
+                        <input type="email" placeholder="Your email" required>
+                        <input type="tel" placeholder="Phone (10 digits)" pattern="[0-9]{10}" required>
+
+                        <select required>
+                            <option value="" disabled selected>Job opportunity</option>
+                            <option value="freelance">Freelance Project</option>
+                            <option value="fulltime">Full-time Role</option>
+                            <option value="other">Other Inquiry</option>
+                        </select>
+                    </div>
+
+                    <textarea placeholder="Your message" rows="6" required></textarea>
+
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            
+            </div>
+        </div>
+
+        <footer class="footer-wrapper">
+            <div class="footer-section">
+                <p class="copyright-text">&copy; 2026 Ankita Verma. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="https://github.com" target="_blank">GitHub</a>
+                    <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+                    <a href="mailto:aiankita06@gmail.com">Email</a>
+                </div>
+            
+            </div>
+        </footer>
+    </body>
+</html>
